@@ -1,6 +1,4 @@
 from django.urls import path
 from . import views
 
-urlpatterns = [
-    path('simulation', views.members, name='members'),
-]
+urlpatterns = [path('simulation/', views.simulation, name = 'simulation')]
