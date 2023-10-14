@@ -5,5 +5,5 @@ def ingredients(ingredientString: str):
     pass
 
 # Create your views here.
-def runSim(request):
-    return HttpResponse("Run Game")
+def simulation(request):
+    return HttpResponse("hello")
