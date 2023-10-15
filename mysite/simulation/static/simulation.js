@@ -2,6 +2,8 @@
 
 
 const onSubmission = async () => {
+    //clear list
+    document.getElementById("recipeList").innerHTML = ""
     const ingredients = document.getElementById("ingredients").value
     const ingredientsString = ingredients.split(/[ ,]+/).join(',')
     console.log("Retrieving recipes with following ingredients: " + ingredientsString)
@@ -11,6 +13,8 @@ const onSubmission = async () => {
         const listItem = document.createElement("li")
         const recipeImage = document.createElement("img")
         recipeImage.src = recipe.image
+        recipeImage.width = 100
+        recipeImage.height = 100
         const recipeLabel = document.createElement("label")
         recipeLabel.textContent = recipe.title
         listItem.appendChild(recipeImage)
