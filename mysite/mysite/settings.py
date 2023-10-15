@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+import mimetypes
+
+mimetypes.add_type("text/javascript", ".js", True)
+mimetypes.add_type("text/html", ".html", True)
+mimetypes.add_type("application/javascript", ".js", True)
 
 load_dotenv()
 
@@ -36,7 +41,7 @@ HOST_URL = os.getenv("HOST_URL", "http://127.0.0.1:8000")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition

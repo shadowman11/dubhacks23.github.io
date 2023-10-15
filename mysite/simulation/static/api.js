@@ -16,10 +16,7 @@ class Recipe {
 const getRecipes = async (ingredientString) => {
     const ApiURL = `${window.location.origin}/api/getrecipes?ingredients=${ingredientString}`
     const response = await fetch(ApiURL)
-    const JSONtext = await response.text()
-    console.log(JSONtext)
-    const JSONformattedText = JSONtext.replaceAll("'","\"")
-    const JSONarray = JSON.parse(JSONformattedText)
+    const JSONarray = await response.json()
     let recipes = []
     for (const recipeObj of JSONarray) {
         const recipe = new Recipe(recipeObj.id, recipeObj.title, recipeObj.image)

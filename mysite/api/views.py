@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
-import json
 
 # Create your views here.
 from mysite.settings import SPOONACULAR
