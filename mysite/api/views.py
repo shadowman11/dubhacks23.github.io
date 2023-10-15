@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
-
+import json
 
 # Create your views here.
 from mysite.settings import SPOONACULAR
+from django.http import JsonResponse
+
 import requests
 
 BASE_API_URL = "https://api.spoonacular.com"
@@ -14,7 +16,7 @@ def getRecipesFromIngredients(request: HttpRequest):
     ingredientListString = request.GET.get("ingredients","")
     REQUEST_URL = f"{BASE_API_URL}/recipes/findByIngredients?apiKey={SPOONACULAR}&ingredients={ingredientListString}"
     JSON = requests.get(REQUEST_URL).json()
-    return HttpResponse(JSON)
+    return JsonResponse(JSON, safe=False)
 
 
 # private API method

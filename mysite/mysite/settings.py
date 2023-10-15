@@ -29,6 +29,9 @@ SECRET_KEY = 'django-insecure-a180w!-c@i-iic8#@-ap!8kr6ur6pm)$ld!p&or7)%(w6c1lp(
 # SPOONACULAR API KEY
 SPOONACULAR = os.getenv("SPOONACULAR")
 
+# hosting url
+HOST_URL = os.getenv("HOST_URL", "http://127.0.0.1:8000")
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

@@ -1,12 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>Leftovers to Recipes Recipe Finder</title>
+    <script defer src="{% static 'api.js' %}"></script>
+    <script defer src="{% static 'simulation.js' %}"></script>
   </head>
   <body>
+    <h1>Leftovers to Recipes Recipe Finder</h1>
+    <form autocomplete="on" action="javascript:void(0)">
+      <input type="text" id="ingredients" placeholder="Enter ingredients here">
+      <input type="submit" id="submit">
+    </form>
+    <ul id = "recipeList">
+
+    </ul>
+
     
   </body>
 </html>
