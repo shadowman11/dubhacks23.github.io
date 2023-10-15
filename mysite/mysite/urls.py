@@ -20,5 +20,6 @@ from . import views
 
 urlpatterns = [
     path('', views.frontpage, name="frontpage"),
+    path('', include("simulation.urls")),
     path('admin/', admin.site.urls)
 ]
