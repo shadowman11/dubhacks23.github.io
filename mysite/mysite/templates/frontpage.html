@@ -2,6 +2,29 @@
 <html>
     <head>
         <title>Leftovers to Recipes</title>
+        <style>
+			.collapsible {
+            	background-color: #f1f1f1;
+             	color: black;
+             	cursor: pointer;
+             	padding: 18px;
+             	border: none;
+             	outline: none;
+            	font-size: 15px;
+			}
+
+			.active, .collapsible:hover {
+  				background-color: #dddddd;
+			}
+
+			.content {
+  				padding: 0 18px;
+ 				background-color: white;
+  				max-height: 0;
+  				overflow: hidden;
+  				transition: max-height 0.2s ease-out;
+			}
+		</style>
     </head>
     <body>
         <center><h1>Leftovers to Recipes</h1></center>
@@ -17,5 +40,28 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe1rEMcuyyH8Gsk5ns6cG85jmMe_7aRxxz_w&usqp=CAU" alt="Trulli" width="250" height="200">
         </div>
         </center>
+		
+		<center><button><font size="+10">Start</font></button></center>
+        <button type="button" class="collapsible">About</button>
+        <div class="content">
+        	<p>Leftovers to Recipes is an application designed for restaurants to reduce the amount of waste that they produce. </p>
+        </div>
+        
+        <script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+
+			for (i = 0; i < coll.length; i++) {
+  				coll[i].addEventListener("click", function() {
+    				this.classList.toggle("active");
+    				var content = this.nextElementSibling;
+    				if (content.style.maxHeight){
+      					content.style.maxHeight = null;
+    				} else {
+      					content.style.maxHeight = content.scrollHeight + "px";
+    				}
+  				});
+			}
+		</script>
     </body>
 </html>
